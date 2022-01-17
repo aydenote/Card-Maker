@@ -9,16 +9,8 @@ function App({ FileInput, authService, cardRepository }) {
     <div className={styles.app}>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/">
-            <Login authService={authService} />
-          </Route>
-          <Route path="/maker">
-            <Maker
-              FileInput={FileInput}
-              authService={authService}
-              cardRepository={cardRepository}
-            />
-          </Route>
+          <Route exact path="/" element={<Login authService={authService} />} />
+          <Route path="/maker" element={<Maker FileInput={FileInput} authService={authService} cardRepository={cardRepository}/>} />
         </Routes>
       </BrowserRouter>
     </div>
